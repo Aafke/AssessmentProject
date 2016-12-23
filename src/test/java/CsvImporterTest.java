@@ -28,7 +28,7 @@ public class CsvImporterTest {
         expectedTransactions.add(expectedTransaction2);
 
         //todo: make pathname more dynamic
-        List<Transaction> actualTransactions = csvImporter.loadFromFile("C:\\Projects\\RaboAssessment\\project\\src\\test\\java\\recordsCSVTestFile.csv");
+        List<Transaction> actualTransactions = csvImporter.loadFromFile("C:\\Projects\\AssessmentProject\\src\\test\\java\\recordsCSVTestFile.csv");
 
         Assert.assertEquals(expectedTransactions.size(), actualTransactions.size());
         for (int i = 0; i < expectedTransactions.size(); i++){
