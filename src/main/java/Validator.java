@@ -10,10 +10,10 @@ public class Validator {
         List<Transaction> failedTransactions = new ArrayList<Transaction>();
 
         for (Transaction transaction : transactionList) {
-            if (uniqueTransactions.containsKey(transaction.transactionReference) || !validEndBalance(transaction)) {
+            if (uniqueTransactions.containsKey(transaction.reference) || !validEndBalance(transaction)) {
                 failedTransactions.add(transaction);
             } else {
-                uniqueTransactions.put(transaction.transactionReference, transaction);
+                uniqueTransactions.put(transaction.reference, transaction);
             }
         }
         return failedTransactions;

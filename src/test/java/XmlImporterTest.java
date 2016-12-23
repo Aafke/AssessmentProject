@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.IOException;
+import javax.xml.bind.JAXBException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -9,26 +9,25 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
-public class CsvImporterTest {
-
+public class XmlImporterTest {
     @Test
-    public void loadFromFileTest() throws IOException{
-        CsvImporter csvImporter = new CsvImporter();
+    public void loadFromFileTest() throws JAXBException {
+        XmlImporter xmlImporter = new XmlImporter();
 
         List<Transaction> expectedTransactions = new ArrayList<Transaction>();
 
-        Transaction expectedTransaction1 = new Transaction(177666, "NL93ABNA0585619023",
-                "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),
-                new BigDecimal(-22.24).setScale(2, RoundingMode.HALF_UP), new BigDecimal(22.61).setScale(2, RoundingMode.HALF_UP));
-        Transaction expectedTransaction2 = new Transaction(112806, "NL69ABNA0433647324",
-                "Subscription for Jan Theuß", new BigDecimal(45.59).setScale(2, RoundingMode.HALF_UP),
-                new BigDecimal(+48.18).setScale(2, RoundingMode.HALF_UP), new BigDecimal(93.77).setScale(2, RoundingMode.HALF_UP));
+        Transaction expectedTransaction1 = new Transaction(187997, "NL91RABO0315273637",
+                "Clothes for Rik King", new BigDecimal(57.6).setScale(2, RoundingMode.HALF_UP),
+                new BigDecimal(-32.98).setScale(2, RoundingMode.HALF_UP), new BigDecimal(24.62).setScale(2, RoundingMode.HALF_UP));
+        Transaction expectedTransaction2 = new Transaction(154270, "NL56RABO0149876948",
+                "Candy for Peter de Vries", new BigDecimal(5429).setScale(2, RoundingMode.HALF_UP),
+                new BigDecimal(-939).setScale(2, RoundingMode.HALF_UP), new BigDecimal(6368).setScale(2, RoundingMode.HALF_UP));
 
         expectedTransactions.add(expectedTransaction1);
         expectedTransactions.add(expectedTransaction2);
 
         //todo: make pathname more dynamic
-        List<Transaction> actualTransactions = csvImporter.loadFromFile("C:\\Projects\\AssessmentProject\\src\\test\\java\\recordsCSVTestFile.csv");
+        List<Transaction> actualTransactions = xmlImporter.loadFromFile("C:\\Projects\\RaboAssessment\\project\\src\\test\\java\\recordsXmlTest.xml");
 
         Assert.assertEquals(expectedTransactions.size(), actualTransactions.size());
         for (int i = 0; i < expectedTransactions.size(); i++){
@@ -39,4 +38,5 @@ public class CsvImporterTest {
             assertTrue(expectedTransactions.get(i).mutation.compareTo(actualTransactions.get(i).mutation) ==0);
         }
     }
+
 }
