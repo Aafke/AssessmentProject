@@ -3,11 +3,19 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Reads csv files, convert lines into transactions
+ */
 public class CsvImporter implements TransactionImporter{
-    //Todo: add comments?
-    public List<Transaction> loadFromFile(String pathname) throws IOException{
+    /**
+     * Reads transactions from file
+     * @param path Location of file to be imported
+     * @return List of transactions
+     * @throws IOException Will be thrown if file was not found or could not be read
+     */
+    public List<Transaction> loadFromFile(String path) throws IOException{
         ArrayList<Transaction> result = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader(new File(pathname)));
+        BufferedReader reader = new BufferedReader(new FileReader(new File(path)));
 
         //First line is header, so nothing is done with this.
         String line = reader.readLine();
