@@ -1,3 +1,9 @@
+package nl.rabobank.transactionchecker.importers;
+
+import nl.rabobank.transactionchecker.importers.CsvImporter;
+import nl.rabobank.transactionchecker.importers.ImporterFactory;
+import nl.rabobank.transactionchecker.importers.TransactionImporter;
+import nl.rabobank.transactionchecker.importers.XmlImporter;
 import org.apache.commons.io.FilenameUtils;
 import org.junit.Test;
 

@@ -1,3 +1,7 @@
+package nl.rabobank.transactionchecker;
+
+import nl.rabobank.transactionchecker.Transaction;
+import nl.rabobank.transactionchecker.Validator;
 import org.junit.Test;
 
 import java.math.BigDecimal;

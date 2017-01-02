@@ -1,3 +1,5 @@
+package nl.rabobank.transactionchecker;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -23,8 +25,8 @@ public class ReportWriter {
 
         List<String> lines = new ArrayList<>();
         for (Transaction transaction : invalidTransactions){
-            lines.add("Transaction reference = " + transaction.reference);
-            lines.add("Transaction description = " + transaction.description);
+            lines.add("nl.rabobank.transactionchecker.Transaction reference = " + transaction.reference);
+            lines.add("nl.rabobank.transactionchecker.Transaction description = " + transaction.description);
             lines.add("");
         }
         Files.write(report, lines, Charset.forName("UTF-8"));

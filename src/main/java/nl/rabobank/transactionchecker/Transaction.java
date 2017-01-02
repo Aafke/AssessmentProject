@@ -1,3 +1,5 @@
+package nl.rabobank.transactionchecker;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -25,5 +27,30 @@ public class Transaction {
         this.mutation = mutation;
         this.description = description;
         this.endBalance = endBalance;
+    }
+
+
+    public Integer getReference() {
+        return reference;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public BigDecimal getStartBalance() {
+        return startBalance;
+    }
+
+    public BigDecimal getMutation() {
+        return mutation;
+    }
+
+    public BigDecimal getEndBalance() {
+        return endBalance;
     }
 }

@@ -1,3 +1,8 @@
+package nl.rabobank.transactionchecker.importers;
+
+import nl.rabobank.transactionchecker.Transaction;
+import nl.rabobank.transactionchecker.Transactions;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -7,7 +12,7 @@ import java.util.List;
 /**
  * Reads xml files, convert xml into transactions
  */
-public class XmlImporter implements TransactionImporter{
+public class XmlImporter implements TransactionImporter {
     /**
      * Reads transactions from file
      * @param path Location of file to be imported

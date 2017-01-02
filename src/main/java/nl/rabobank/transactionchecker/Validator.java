@@ -1,3 +1,5 @@
+package nl.rabobank.transactionchecker;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +28,7 @@ public class Validator {
         }
         return failedTransactions;
     }
-    
+
     private boolean validEndBalance(Transaction transaction) {
         return (transaction.startBalance.add(transaction.mutation).equals(transaction.endBalance) );
     }

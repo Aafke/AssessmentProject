@@ -1,3 +1,5 @@
+package nl.rabobank.transactionchecker.importers;
+
 /**
  * Produces Importer instances based on filetype
  */

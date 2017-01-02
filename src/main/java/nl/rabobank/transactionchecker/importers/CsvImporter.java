@@ -1,3 +1,7 @@
+package nl.rabobank.transactionchecker.importers;
+
+import nl.rabobank.transactionchecker.Transaction;
+
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -6,7 +10,7 @@ import java.util.List;
 /**
  * Reads csv files, convert lines into transactions
  */
-public class CsvImporter implements TransactionImporter{
+public class CsvImporter implements TransactionImporter {
     /**
      * Reads transactions from file
      * @param path Location of file to be imported

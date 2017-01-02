@@ -1,3 +1,7 @@
+package nl.rabobank.transactionchecker;
+
+import nl.rabobank.transactionchecker.importers.ImporterFactory;
+import nl.rabobank.transactionchecker.importers.TransactionImporter;
 import org.apache.commons.io.FilenameUtils;
 
 import javax.xml.bind.JAXBException;

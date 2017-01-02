@@ -1,3 +1,7 @@
+package nl.rabobank.transactionchecker.importers;
+
+import nl.rabobank.transactionchecker.importers.CsvImporter;
+import nl.rabobank.transactionchecker.Transaction;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,11 +35,11 @@ public class CsvImporterTest {
 
         Assert.assertEquals(expectedTransactions.size(), actualTransactions.size());
         for (int i = 0; i < expectedTransactions.size(); i++){
-            Assert.assertEquals(expectedTransactions.get(i).reference, actualTransactions.get(i).reference);
-            Assert.assertEquals(expectedTransactions.get(i).accountNumber, actualTransactions.get(i).accountNumber);
-            assertTrue(expectedTransactions.get(i).startBalance.compareTo(actualTransactions.get(i).startBalance) ==0);
-            assertTrue(expectedTransactions.get(i).endBalance.compareTo(actualTransactions.get(i).endBalance) ==0);
-            assertTrue(expectedTransactions.get(i).mutation.compareTo(actualTransactions.get(i).mutation) ==0);
+            Assert.assertEquals(expectedTransactions.get(i).getReference(), actualTransactions.get(i).getReference());
+            Assert.assertEquals(expectedTransactions.get(i).getAccountNumber(), actualTransactions.get(i).getAccountNumber());
+            assertTrue(expectedTransactions.get(i).getStartBalance().compareTo(actualTransactions.get(i).getStartBalance()) ==0);
+            assertTrue(expectedTransactions.get(i).getEndBalance().compareTo(actualTransactions.get(i).getEndBalance()) ==0);
+            assertTrue(expectedTransactions.get(i).getMutation().compareTo(actualTransactions.get(i).getMutation()) ==0);
         }
     }
 }
