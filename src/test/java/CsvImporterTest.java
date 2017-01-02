@@ -14,7 +14,7 @@ public class CsvImporterTest {
     public void loadFromFileTest() throws IOException{
         CsvImporter csvImporter = new CsvImporter();
 
-        List<Transaction> expectedTransactions = new ArrayList<Transaction>();
+        List<Transaction> expectedTransactions = new ArrayList<>();
 
         Transaction expectedTransaction1 = new Transaction(177666, "NL93ABNA0585619023",
                 "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),

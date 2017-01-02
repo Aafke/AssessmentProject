@@ -6,7 +6,7 @@ import java.util.List;
 public class CsvImporter implements TransactionImporter{
     //Todo: add comments?
     public List<Transaction> loadFromFile(String pathname) throws IOException{
-        ArrayList<Transaction> result = new ArrayList<Transaction>();
+        ArrayList<Transaction> result = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(new File(pathname)));
 
         //First line is header, so nothing is done with this.

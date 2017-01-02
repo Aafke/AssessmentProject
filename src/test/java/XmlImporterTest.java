@@ -14,7 +14,7 @@ public class XmlImporterTest {
     public void loadFromFileTest() throws JAXBException {
         XmlImporter xmlImporter = new XmlImporter();
 
-        List<Transaction> expectedTransactions = new ArrayList<Transaction>();
+        List<Transaction> expectedTransactions = new ArrayList<>();
 
         Transaction expectedTransaction1 = new Transaction(187997, "NL91RABO0315273637",
                 "Clothes for Rik King", new BigDecimal(57.6).setScale(2, RoundingMode.HALF_UP),

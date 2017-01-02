@@ -12,7 +12,7 @@ public class ValidatorTest {
     @Test
     public void validateTransactionsTestAllValidRecords() {
         Validator validator = new Validator();
-        List<Transaction> transactionList = new ArrayList<Transaction>();
+        List<Transaction> transactionList = new ArrayList<>();
 
         Transaction transaction1 = new Transaction(177666, "NL93ABNA0585619023",
                 "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),
@@ -31,7 +31,7 @@ public class ValidatorTest {
     @Test
     public void validateTransactionsTestIdenticalTransactionReference(){
         Validator validator = new Validator();
-        List<Transaction> transactionList = new ArrayList<Transaction>();
+        List<Transaction> transactionList = new ArrayList<>();
 
         Transaction transaction1 = new Transaction(177666, "NL93ABNA0585619023",
                 "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),
@@ -58,7 +58,7 @@ public class ValidatorTest {
     @Test
     public void validateTransactionsTestInvalidEndBalance() {
         Validator validator = new Validator();
-        List<Transaction> transactionList = new ArrayList<Transaction>();
+        List<Transaction> transactionList = new ArrayList<>();
 
         Transaction transaction1 = new Transaction(177666, "NL93ABNA0585619023",
                 "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),
@@ -85,7 +85,7 @@ public class ValidatorTest {
     @Test
     public void validateTransactionsTestIdenticalTransactionReferenceAndInvalidEndBalance() {
         Validator validator = new Validator();
-        List<Transaction> transactionList = new ArrayList<Transaction>();
+        List<Transaction> transactionList = new ArrayList<>();
 
         Transaction transaction1 = new Transaction(177666, "NL93ABNA0585619023",
                 "Flowers for Rik Theuß", new BigDecimal(44.85).setScale(2, RoundingMode.HALF_UP),

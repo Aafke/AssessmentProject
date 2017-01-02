@@ -6,8 +6,8 @@ import java.util.Map;
 public class Validator {
 
     public List<Transaction> validateTransactions(List<Transaction> transactionList) {
-        Map<Integer, Transaction> uniqueTransactions = new HashMap<Integer, Transaction>();
-        List<Transaction> failedTransactions = new ArrayList<Transaction>();
+        Map<Integer, Transaction> uniqueTransactions = new HashMap<>();
+        List<Transaction> failedTransactions = new ArrayList<>();
 
         for (Transaction transaction : transactionList) {
             if (uniqueTransactions.containsKey(transaction.reference) || !validEndBalance(transaction)) {
