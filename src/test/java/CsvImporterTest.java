@@ -10,7 +10,6 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 public class CsvImporterTest {
-
     @Test
     public void loadFromFileTest() throws IOException{
         CsvImporter csvImporter = new CsvImporter();
@@ -27,8 +26,8 @@ public class CsvImporterTest {
         expectedTransactions.add(expectedTransaction1);
         expectedTransactions.add(expectedTransaction2);
 
-        //todo: make pathname more dynamic
-        List<Transaction> actualTransactions = csvImporter.loadFromFile("C:\\Projects\\AssessmentProject\\src\\test\\java\\recordsCSVTestFile.csv");
+        String workingDir = System.getProperty("user.dir");
+        List<Transaction> actualTransactions = csvImporter.loadFromFile(workingDir + "\\src\\test\\java\\recordsCSVTestFile.csv");
 
         Assert.assertEquals(expectedTransactions.size(), actualTransactions.size());
         for (int i = 0; i < expectedTransactions.size(); i++){

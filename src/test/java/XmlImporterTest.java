@@ -26,8 +26,8 @@ public class XmlImporterTest {
         expectedTransactions.add(expectedTransaction1);
         expectedTransactions.add(expectedTransaction2);
 
-        //todo: make pathname more dynamic
-        List<Transaction> actualTransactions = xmlImporter.loadFromFile("C:\\Projects\\RaboAssessment\\project\\src\\test\\java\\recordsXmlTest.xml");
+        String workingDir = System.getProperty("user.dir");
+        List<Transaction> actualTransactions = xmlImporter.loadFromFile(workingDir + "\\src\\test\\java\\recordsXmlTest.xml");
 
         Assert.assertEquals(expectedTransactions.size(), actualTransactions.size());
         for (int i = 0; i < expectedTransactions.size(); i++){

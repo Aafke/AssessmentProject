@@ -3,12 +3,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-
 public class ImporterFactoryTest {
     @Test
     public void getXmlImporter(){
-        //todo: make pathname more dynamic
-        String path = "C:\\Projects\\AssessmentProject\\src\\test\\java\\recordsXmlTest.xml";
+        String workingDir = System.getProperty("user.dir");
+        String path = workingDir +"\\src\\test\\java\\recordsXmlTest.xml";
 
         //create Importer based on extension
         TransactionImporter transactionImporter = ImporterFactory.getImporter(FilenameUtils.getExtension(path));
@@ -17,8 +16,8 @@ public class ImporterFactoryTest {
 
     @Test
     public void getCsvImporter(){
-        //todo: make pathname more dynamic
-        String path = "C:\\Projects\\AssessmentProject\\src\\test\\java\\recordsCSVTestFile.csv";
+        String workingDir = System.getProperty("user.dir");
+        String path = workingDir +"\\src\\test\\java\\recordsCSVTestFile.csv";
 
         //create Importer based on extension
         TransactionImporter transactionImporter = ImporterFactory.getImporter(FilenameUtils.getExtension(path));
